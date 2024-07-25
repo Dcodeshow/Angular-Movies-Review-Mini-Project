@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="home-container">
+  <div class="all-movies">
+    <div class="trending-movies">
+      <div class="top">
+        <h4>Trending Movies</h4>
+        <div class="view-all">View All</div>
+      </div>
+      <div class="movies-thumbnail">
+        <div
+          class="movie"
+          *ngFor="let trending of trendingMovies"
+          (click)="goToMovie('trending', trending.id)"
+        >
+          <div class="cover">
+            <img alt="" [src]="trending.cover" />
+          </div>
+          <div class="detail">
+            <div class="name">{{ trending.name }}</div>
+            <div class="rating d-flex justify-content-between">
+              <span class="rating-value">
+                <app-star-rating
+                  [starRating]="trending.rating"
+                ></app-star-rating>
+              </span>
+              <span>{{ trending.rating }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="theatre-movies mt-5">
+      <div class="top">
+        <h4>Popular in Theatres</h4>
+        <div class="view-all">View All</div>
+      </div>
+      <div class="movies-thumbnail">
+        <div
+          class="movie"
+          *ngFor="let popular of popularMovies"
+          (click)="goToMovie('popular', popular.id)"
+        >
+          <div class="cover">
+            <img [src]="popular.cover" />
+          </div>
+          <div class="detail">
+            <div class="name">{{ popular.name }}</div>
+            <div class="rating d-flex justify-content-between">
+              <span class="rating-value">
+                <app-star-rating
+                  [starRating]="popular.rating"
+                ></app-star-rating>
+              </span>
+              <span>{{ popular.rating }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popular-movies">
+    <h4>All Time Popular</h4>
+    <div class="movies">
+      <div
+        class="movie d-flex justify-content-between"
+        *ngFor="let theatre of theatreMoviies"
+        (click)="goToMovie('theatre', theatre.id)"
+      >
+        <div class="name">{{ theatre.name }}</div>
+        <div class="rating">
+          <span class="rating-value">
+            <app-star-rating [starRating]="theatre.rating"></app-star-rating>
+          </span>
+        </div>
+      </div>
+      <div class="view-all">View all</div>
+    </div>
+  </div>
+</div>

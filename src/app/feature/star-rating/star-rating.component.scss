@@ -1,0 +1,39 @@
+.rating {
+  padding-right: 45px;
+  position: relative;
+
+  .rating-value {
+
+    font-weight: bold;
+  }
+}
+
+i {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  padding-right: 0.1rem;
+  color: #d3d3d3;
+}
+
+.filled {
+  color: red;
+  overflow: hidden;
+
+}
+
+i {
+  position: relative;
+  display: inline-block;
+  font-size: 1.1rem;
+  padding-right: 0.3rem;
+  color: #d3d3d3;
+}
+
+.filled {
+  color: red;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
